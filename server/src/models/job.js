@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 
-const jobSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+const jobSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -20,6 +22,10 @@ const jobSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
     required: true
+  },
+  item: {
+    type: Schema.Types.ObjectId,
+    ref: 'Item'
   },
   createdAt: {
     type: Date,
