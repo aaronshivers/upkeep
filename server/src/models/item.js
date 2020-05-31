@@ -1,6 +1,8 @@
 const mongoose = require('mongoose')
 
-const itemSchema = new mongoose.Schema({
+const Schema = mongoose.Schema
+
+const itemSchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -36,6 +38,10 @@ const itemSchema = new mongoose.Schema({
     trim: true,
     minlength: 1,
     maxlength: 50
+  },
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
   },
   createdAt: {
     type: Date,
