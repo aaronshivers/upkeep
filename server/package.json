@@ -21,7 +21,7 @@
     "test-watch": "nodemon --exec 'npm test'",
     "start": "cross-env NODE_ENV=production node \"src/server.js\"",
     "dev": "cross-env NODE_ENV=development nodemon \"src/server.js\"",
-    "lint": "standard \"src/**/*.js\" --verbose --env mocha | snazzy"
+    "lint": "standard \"src/**/*.js\" --fix --verbose --env mocha | snazzy"
   },
   "author": "aaron shivers",
   "license": "GPL-3.0"
