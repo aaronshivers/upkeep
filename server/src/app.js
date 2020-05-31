@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 
-const indexRoutes = require('./routes')
+const indexRoutes = require('./index/indexAPI')
 
 app.use(indexRoutes)
 
