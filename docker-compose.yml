@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: upkeep-mongodb
+    ports:
+      - "27017:27017"
+
+#  angular:
+#    build: angular-client
+#    depends_on:
+#      - express
+#    ports:
+#      - "4200:4200"
+#    volumes:
+#      - ./angular-client:/app
+#      - /app/node_modules
+
+  express:
+    build:
+      context: express-server
+    depends_on:
+      - mongo
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./express-express-server:/app
+      - /app/node_modules
+    env_file:
+      - ./express-server/.env
+

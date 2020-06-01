@@ -1,1 +1,0 @@
-WORKDIR /usr/src/app/server
